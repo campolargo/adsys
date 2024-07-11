@@ -55,7 +55,7 @@ import (
 
 // ProOnlyRules are the rules that are only available for Pro subscribers. They
 // will be filtered otherwise.
-var ProOnlyRules = []string{"privilege", "scripts", "mount", "apparmor", "proxy", "certificate"}
+var ProOnlyRules = []string{}
 
 // Manager handles all managers for various policy handlers.
 type Manager struct {
