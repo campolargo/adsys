@@ -3,6 +3,6 @@
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y devscripts
-cd packages/adsys
+cd external/adsys
 apt-get build-dep -y .
 su ubuntu -c 'DEB_BUILD_OPTIONS=nocheck debuild -b -uc -us'
