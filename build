@@ -2,8 +2,9 @@
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
-apt-get install -y devscripts
+apt-get install --no-install-recommends -y devscripts
 cd external/adsys
 apt-get build-dep -y .
-useradd -d /home/ubuntu -m -u 1000 ubuntu
-su ubuntu -c 'DEB_BUILD_OPTIONS=nocheck debuild -b -uc -us'
+DEB_BUILD_OPTIONS=nocheck debuild -b -uc -us
+cd ..
+chown -R 1000:1000 *
