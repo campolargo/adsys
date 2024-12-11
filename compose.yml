@@ -1,0 +1,7 @@
+services:
+    adsys:
+        container_name: adsys
+        image: ubuntu:jammy
+        command: /external/adsys/build
+        volumes:
+            - ../:/external/
