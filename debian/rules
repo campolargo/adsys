@@ -32,6 +32,8 @@ export GOTOOLCHAIN := local
 %:
 	dh $@ --buildsystem=golang --with=golang,apport
 
+override_dh_dwz:
+
 override_dh_auto_clean:
 	dh_auto_clean
 	# Create the vendor directory when building the source package

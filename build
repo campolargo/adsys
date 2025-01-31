@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get install --no-install-recommends -y devscripts
+cd external/adsys
+apt-get build-dep -y .
+/usr/lib/go-1.22/bin/go mod vendor
+DEB_BUILD_OPTIONS=nocheck debuild -b -uc -us
+cd ..
+chown -R 1000:1000 *
