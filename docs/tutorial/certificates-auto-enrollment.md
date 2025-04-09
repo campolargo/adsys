@@ -1,9 +1,9 @@
-# Certificates Auto-Enrolment
+# Certificates auto-enrollment
 
-Certificate Auto-Enrolment is a key component of Ubuntu’s Active Directory GPO support. 
-This feature enables clients to seamlessly enrol for certificates from Active Directory Certificate Services. 
+Certificate auto-enrollment is a key component of Ubuntu’s Active Directory GPO support. 
+This feature enables clients to seamlessly enroll for certificates from Active Directory Certificate Services.
 
-This tutorial is designed to help you develop an understanding of how to efficiently implement and manage certificate auto-enrolment, ensuring your systems remain secure and compliant with organisational policies.
+This tutorial is designed to help you develop an understanding of how to efficiently implement and manage certificate auto-enrollment, ensuring your systems remain secure and compliant with organizational policies.
 
 A video version of the tutorial is also available:
 
@@ -17,24 +17,24 @@ A video version of the tutorial is also available:
 
 ## What you will do
 
-- Configure and update the auto-enrolment policy
+- Configure and update the auto-enrollment policy
 - Connect to a VPN server using certificates
 - Access resources on the virtual network
 
 ## Setup
 
-You will need an installation of ADSys on your client Ubuntu Machine and the client should be joined to an Active Directory (AD) domain.
+You will need an installation of ADSys on your client Ubuntu Machine and the client should be joined to an {term}`Active Directory` (AD) domain.
 Please refer to our how-to guides on setting up the Ubuntu client machine:
 
 - [Join machine to AD during installation](../how-to/join-ad-installation.md)
 - [Join machine to AD manually](../how-to/join-ad-manually.md)
 - [Install ADSys](../how-to/set-up-adsys.md)
 
-For the Windows Domain controller, refer to:
+For the Windows {term}`domain controller`, refer to:
 
 - [Set up AD](../how-to/set-up-ad.md)
 
-## Configure the auto-enrolment policy
+## Configure the auto-enrollment policy
 
 First the policy needs to be configured.
 This is done through the same entry policy as that which is used to configure Windows clients.

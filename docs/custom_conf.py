@@ -19,7 +19,7 @@ import datetime
 ############################################################
 
 # Product name
-project = "Active Directory GPO client"
+project = "ADSys"
 author = "Canonical Group Ltd"
 
 # The title you want to display for the documentation in the sidebar.
@@ -47,6 +47,13 @@ html_title = project + " documentation"
 # curl -H 'Authorization: token <TOKEN>' \
 #   -H 'Accept: application/vnd.github.v3.raw' \
 #   https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
+
+# This adds an edit button to the top of each page
+html_theme_options = {
+    "source_repository": "https://github.com/ubuntu/adsys/",
+    "source_branch": "main",
+    "source_directory": "docs/",
+}
 
 copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 
@@ -122,7 +129,9 @@ slug = ""
 # (see https://docs.readthedocs.io/en/stable/guides/redirects.html).
 # NOTE: If this variable is not defined, set to None, or the dictionary is empty,
 # the sphinx_reredirects extension will be disabled.
-redirects = {}
+redirects = {
+    "tutorial/certificates-auto-enrolment": "../../tutorial/certificates-auto-enrollment",
+}
 
 ############################################################
 ### Link checker exceptions
@@ -132,6 +141,7 @@ redirects = {}
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
     "https://leonelson.com/2011/08/15/how-to-increase-your-csr-key-size-on-microsoft-iis-without-removing-the-production-certificate/",
+    "https://manpages.ubuntu.com/manpages/man8/*",
 ]
 
 # Pages on which to ignore anchors
