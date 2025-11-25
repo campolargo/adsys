@@ -22,6 +22,10 @@ on:
     tags:
       - "*"
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   supported-releases:
     name: Build matrix for supported ADSys and Ubuntu releases
@@ -29,6 +33,7 @@ jobs:
     outputs:
       matrix: ${{ steps.set-supported-releases.outputs.matrix }}
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install needed binaries
         run: |
           sudo apt-get update
@@ -36,11 +41,11 @@ jobs:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: ${{ inputs.repository || github.repository }}
           ref: ${{ inputs.branch || github.ref }}
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - name: Build matrix
@@ -88,6 +93,7 @@ jobs:
       AD_PASSWORD: ${{ secrets.AD_PASSWORD }}
       ADSYS_PRO_TOKEN: ${{ secrets.ADSYS_PRO_TOKEN }}
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install required dependencies
         run: |
           sudo apt-get update
@@ -96,11 +102,11 @@ jobs:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: ${{ inputs.repository || github.repository }}
           ref: ${{ inputs.branch || github.ref }}
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - name: Set up SSH key
@@ -134,14 +140,14 @@ jobs:
         run: go run ./e2e/cmd/run_tests/98_collect_pam_coverage
         if: ${{ matrix.codename == 'noble' }}
       - name: Upload PAM coverage as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: pam-coverage.zip
           path: ./output/pam-cobertura.xml
         if: ${{ matrix.codename == 'noble' }}
       - name: Collect logs on failure
         if: ${{ failure() }}
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: e2e-logs-${{ matrix.codename }}
           path: logs/

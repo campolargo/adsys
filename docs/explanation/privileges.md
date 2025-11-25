@@ -1,4 +1,10 @@
+(exp::privileges)=
 # Admin privileges management
+
+```{include} ../pro_content_notice.txt
+    :start-after: <!-- Include start pro -->
+    :end-before: <!-- Include end pro -->
+```
 
 The Admin privilege manager allows to grant or revoke superuser privileges for the default local user, and Active Directory users and groups.
 
@@ -6,15 +12,11 @@ All those settings are globally enforced on the machine and are available at `Co
 
 ![Privileges screen in AD](../images/explanation/privileges/privileges-options.png)
 
-## Feature availability
-
-This feature is available only for subscribers of **Ubuntu Pro**.
-
 ## Rules precedence
 
 Any settings will override the same settings in less specific GPO.
 
-## What does administrator means?
+## What does "administrator" means?
 
 Administrators:
 
@@ -33,7 +35,9 @@ This status keep the default for the system: `sudo` group members are considered
 
 `sudo` group members are not considered administrators on the client.
 
-> Note: you can grant specific users not necessarily in the `sudo` group administrator privileges with the "Client administrator option".
+```{note}
+You can grant specific users not necessarily in the `sudo` group administrator privileges with the "Client administrator option".
+```
 
 ## Active Directory users and groups
 

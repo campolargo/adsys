@@ -4,9 +4,9 @@ ADSys is the Active Directory Group Policy client for Ubuntu.
 
 ADSys enables management of Ubuntu Desktop and Server clients using Microsoft Active Directory. It integrates with services like SSSD or Winbind, which handle user access and authentication, providing extended functionality for managing and controlling Ubuntu clients.
 
-With ADSys, policies can be applied to Ubuntu clients at boot and login, privileges can be granted and revoked, and remote script execution can be automated. Administrative templates (ADMX and ADML) are provided for all supported versions of Ubuntu.
+With ADSys, policies can be applied to Ubuntu clients at boot and login, privileges can be granted and revoked, and remote script execution can be automated. ADSys also comes with administrative templates (ADMX and ADML) for all supported versions of Ubuntu.
 
-System administrators can use ADSys to apply their skills and tools for managing Windows machines using Microsoft Active Directory to the management of Ubuntu machines.
+System administrators can use ADSys to apply familiar skills and tools for managing Windows machines to the management of Ubuntu machines.
 
 ```{toctree}
 :hidden:
@@ -22,11 +22,11 @@ explanation/index
 ````{grid} 1 1 2 2
 
 ```{grid-item-card}
-### [Tutorials](tutorial/index)
+### [Tutorial](tutorial/index)
 
-**Learn** to use an ADSys feature:
+**Learn** to use ADSys for managing Ubuntu Desktop with Active Directory:
 
-* [Certificate auto-enrollment with ADSys](/tutorial/certificates-auto-enrollment)
+* [Getting started with ADSys](tutorial::getting-started)
 
 ```
 
@@ -57,8 +57,8 @@ explanation/index
 
 **Find specific information**, such as:
 
+* [Standard and Pro features for ADSys](/reference/features)
 * [Policies supported by ADSys](/reference/policies/index)
-* [The ADSys daemon](/reference/adsysd-cli)
 
 ```
 

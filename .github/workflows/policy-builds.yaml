@@ -10,20 +10,24 @@ on:
   schedule:
     - cron: '42 0 * * *'
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-admxgen:
     name: Build admxgen static binary
     runs-on: ${{ vars.RUNNER }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - run: |
           mkdir /tmp/adsys
           CGO_ENABLED=0 go build ./cmd/admxgen/
       - name: Upload admxgen
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: admxgen
           path: |
@@ -38,6 +42,7 @@ jobs:
       matrix: ${{ steps.set-supported-releases.outputs.matrix }}
     needs: build-admxgen
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install needed binaries
         run: |
           sudo apt-get update
@@ -48,10 +53,18 @@ jobs:
           set -eu
 
           function releaseDockerExists() {
+              if [ ! -f "docker_tags.list" ]; then
+                TOKEN=$(curl "https://auth.docker.io/token?service=registry.docker.io&scope=repository:library/ubuntu:pull" |\
+                  jq -r .token)
+                curl -H "Authorization: Bearer $TOKEN" \
+                  https://registry-1.docker.io/v2/library/ubuntu/tags/list 2>/dev/null |\
+                  jq -r '.tags[]' > docker_tags.list
+              fi
+
               local codename="${1}"
               exists=1
-              curl "https://registry.hub.docker.com/api/content/v1/repositories/public/library/ubuntu/tags?page_size=3000" 2>/dev/null | \
-                  jq -r '.results[].name' | grep -q "${codename}" && exists=0
+
+              grep -q "${codename}" docker_tags.list && exists=0
               echo "${exists}"
           }
 
@@ -90,7 +103,7 @@ jobs:
       image: ${{ matrix.releases }}
     steps:
       - name: Download admxgen and definition files
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: admxgen
       - name: Install desktop with all default package in container
@@ -111,7 +124,7 @@ jobs:
           artifacts_name=${artifacts_name/:/-}
           echo "artifacts_name=${artifacts_name}" >> $GITHUB_ENV
       - name: Generated definition files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: policies-${{ env.artifacts_name }}
           path: out/*
@@ -125,12 +138,13 @@ jobs:
       matrix:
         releases: ['LTS', 'ALL']
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install needed binaries
         run: |
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y distro-info
       - name: Download all available artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: artifacts
       - name: Display structure of downloaded files
@@ -157,7 +171,7 @@ jobs:
           artifacts/admxgen/admxgen admx --auto-detect-releases ${allowflag} artifacts/admxgen/cmd/admxgen/defs/categories.yaml wanted/ .
           ls -R
       - name: Upload adm template files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: adm-${{ matrix.releases }}
           path: Ubuntu.adm*
@@ -168,12 +182,13 @@ jobs:
     runs-on: ${{ vars.RUNNER }}
     needs: collect-releases
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install needed binaries
         run: |
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y distro-info
       - name: Download all available artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           path: artifacts
       - name: Display structure of downloaded files
@@ -194,7 +209,7 @@ jobs:
           artifacts/admxgen/admxgen doc artifacts/admxgen/cmd/admxgen/defs/categories.yaml wanted/ generated-docs/
           ls -R
       - name: Upload adm template files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: generated-docs
           path: generated-docs/*
@@ -207,19 +222,19 @@ jobs:
       - generate-ad
       - generate-doc
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Download adm template files for "all"
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: adm-ALL
           path: policies/Ubuntu/all
       - name: Download adm template files for lts only
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: adm-LTS
           path: policies/Ubuntu/lts-only
       - name: Download generated documentation
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v6
         with:
           name: generated-docs
           path: docs/reference/policies/
@@ -247,7 +262,7 @@ jobs:
     needs: integrate
     if: ${{ failure() }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Create issue if build failed
         uses: JasonEtco/create-an-issue@v2
         env:

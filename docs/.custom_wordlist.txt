@@ -13,6 +13,7 @@ ALS
 apparmor
 AppArmor
 AppArmor's
+authd
 autocompletion
 autoenroll
 autoenrollment
@@ -38,14 +39,18 @@ dir
 DNS
 Dropdown
 dropdownList
+DSRM
 erroring
 ESM
 executables
 filesystem
 fpath
 FQDN
+gapped
+GC
 GDM
 gdm
+GeneralUbuntuDesktopPolicy
 getcert
 GPL
 gpo
@@ -88,6 +93,7 @@ multiline
 multiText
 nameservice
 nfs
+NTP
 OpenLDAP
 OU
 OUs
@@ -102,6 +108,8 @@ rb
 readthedocs
 realmd
 runscripts
+schema
+schemas
 setgid
 setuid
 smartcard
@@ -144,6 +152,7 @@ usb
 USBGuard
 usr
 unticking
+vendored
 vendoring
 visudo
 VPN

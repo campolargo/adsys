@@ -1,3 +1,47 @@
+adsys (0.16.4) resolute; urgency=medium
+
+  * Bump Go version to 1.24
+  * Allow searching GPO list by userPrincipalName
+  * Fix invalid header for newer polkit versions 
+  * Refresh policy definition files
+  * Documentation updates:
+    - Added Getting Started ADSys tutorial
+    - Added Google analytics to docs
+    - Added release notes
+    - Added security overview explanation
+    - Built sitemap for ADSys docs
+    - Improved presentation of Pro features
+    - Migrated to Starter Pack extension
+    - Moved certs tutorial to howto section
+    - Added periodic audit
+  * Bump dependencies to latest:
+    - github.com/charmbracelet/bubbletea
+    - github.com/charmbracelet/glamour
+    - github.com/coreos/go-systemd/v22
+    - github.com/fsnotify/fsnotify
+    - github.com/godbus/dbus/v5
+    - github.com/kardianos/service
+    - github.com/leonelquinteros/gotext
+    - github.com/maruel/natural
+    - github.com/pkg/sftp
+    - github.com/spf13/cobra
+    - github.com/spf13/viper
+    - golang.org/x/crypto
+    - golang.org/x/net
+    - golang.org/x/sync
+    - golang.org/x/sys
+    - golang.org/x/text
+    - google.golang.org/grpc
+    - google.golang.org/protobuf
+    - github.com/golangci/golangci-lint/v2
+    - actions/checkout
+    - actions/download-artifact
+    - actions/setup-go
+    - actions/upload-artifact
+    - jidicula/clang-format-action
+
+ -- Denison Barbosa <denison.barbosa@canonical.com>  Wed, 19 Nov 2025 06:19:21 -0400
+
 adsys (0.16.3) plucky; urgency=medium
 
   * New upstream release

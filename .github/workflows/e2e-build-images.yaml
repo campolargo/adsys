@@ -14,6 +14,10 @@ on:
   schedule:
     - cron: '42 0 * * 0' # 00:42 UTC every Sunday
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   supported-releases:
     name: Build matrix for supported ADSys and Ubuntu releases
@@ -22,6 +26,7 @@ jobs:
       matrix: ${{ steps.set-supported-releases.outputs.matrix }}
       versions: ${{ steps.set-supported-releases.outputs.versions }}
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install needed binaries
         run: |
           sudo apt-get update
@@ -41,7 +46,7 @@ jobs:
           versions=""
           while IFS=$'\t' read -r version codename; do
               # Filter out unsupported LTS releases
-              if [[ "${codename}" =~ trusty|xenial|bionic ]]; then
+              if [[ "${codename}" =~ xenial|bionic|focal ]]; then
                   continue
               fi
 
@@ -74,8 +79,8 @@ jobs:
       - uses: azure/login@v2
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - name: Set up SSH key

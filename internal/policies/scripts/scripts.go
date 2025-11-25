@@ -17,7 +17,6 @@ import (
 	"bufio"
 	"context"
 	"errors"
-	"fmt"
 	"os"
 	"os/exec"
 	"os/user"
@@ -242,8 +241,8 @@ func RunScripts(ctx context.Context, order string, allowOrderMissing bool) (err 
 
 	// Delete users or machine script directory once all user logoff or machine shutdown scripts are executed
 	defer func() {
-		if !((strings.Contains(order, "/users/") && strings.HasSuffix(order, "/logoff")) ||
-			(strings.Contains(order, "/machine/") && strings.HasSuffix(order, "/shutdown"))) {
+		if (!strings.Contains(order, "/users/") || !strings.HasSuffix(order, "/logoff")) &&
+			(!strings.Contains(order, "/machine/") || !strings.HasSuffix(order, "/shutdown")) {
 			return
 		}
 		log.Debug(ctx, "Logoff or shutdown called, deleting in session flag")
@@ -299,8 +298,7 @@ func RunScripts(ctx context.Context, order string, allowOrderMissing bool) (err 
 
 func mkdirAllWithUIDGid(p string, uid, gid int) error {
 	if err := os.MkdirAll(p, 0750); err != nil {
-		//nolint:govet,staticcheck // printf,SA1006: this is an i18n formatted const string
-		return fmt.Errorf(gotext.Get("can't create scripts directory %q: %v", p, err))
+		return errors.New(gotext.Get("can't create scripts directory %q: %v", p, err))
 	}
 
 	return chown(p, nil, uid, gid)

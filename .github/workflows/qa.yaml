@@ -7,6 +7,10 @@ on:
       - "*"
   pull_request:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   apt_dependencies: >-
     ca-certificates curl dconf-cli gcc gettext git libnss-wrapper libsmbclient-dev
@@ -21,15 +25,16 @@ jobs:
     # workflow environements don’t work either.
     runs-on: ubuntu-24.04
     steps:
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ${{ env.apt_dependencies }}
       - name: work around permission issue with git vulnerability (we are local here). TO REMOVE
         run: git config --global --add safe.directory /__w/adsys/adsys
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Go code sanity check
-        uses: canonical/desktop-engineering/gh-actions/go/code-sanity@main
+        uses: canonical/desktop-engineering/gh-actions/go/code-sanity@v2
         with:
           golangci-lint-configfile: ".golangci.yaml"
           tools-directory: "tools"
@@ -38,7 +43,7 @@ jobs:
             go build ./...
             go generate -x -tags=tools ./pam
       - name: C code formatting
-        uses: jidicula/clang-format-action@v4.15.0
+        uses: jidicula/clang-format-action@v4.16.0
         with:
           include-regex: '^.*\.(c|h)$' # Makes sure to run only on C (source and header) files
           exclude-regex: 'vendor' # Excludes the vendor directory
@@ -48,10 +53,11 @@ jobs:
     name: Tests
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install dependencies
         run: |
           sudo apt-get update
@@ -93,7 +99,7 @@ jobs:
           gocov convert "${go_only_cov_file}" | gocov-xml > "${coverage_dir}/coverage.xml"
           reportgenerator -reports:"${coverage_dir}/*.xml" -targetdir:"${cod_cov_dir}" -reporttypes:Cobertura
       - name: Upload XML coverage report as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: coverage.zip
           path: ./coverage/codecov/Cobertura.xml
@@ -114,10 +120,10 @@ jobs:
     env:
       packages: ./internal/loghooks ./internal/watchdservice ./internal/watchdtui ./internal/watcher ./internal/config/watchd ./cmd/adwatchd ./cmd/adwatchd/integration_tests
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
-      - uses: actions/setup-go@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
       - name: Build installer
@@ -148,7 +154,7 @@ jobs:
         # detection enabled and the code is mostly platform independent, this
         # should be a safe action to take.
       - name: Attach installer artifact to workflow run
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: adwatchd_setup
           path: installer/Output/adwatchd_setup.exe

@@ -1,14 +1,11 @@
-# Tutorials
-
-This section contains step-by-step tutorials to help you get started with ADSys and learn about some its key features.
+# Tutorial
 
 ```{toctree}
 :hidden:
-certificates-auto-enrollment
+getting-started
 ```
 
-## Certificates auto-enrollment
+Get started with ADSys by setting up Active Directory on Windows server, joining
+an Ubuntu client, and applying policies using ADSys
 
-Learn to use Ubuntu's certificate auto-enrollment feature for certificate management with Active Directory Certificate Services.
-
-* [Certificates auto-enrollment](certificates-auto-enrollment.md)
+* [Get started with ADSys](getting-started.md)

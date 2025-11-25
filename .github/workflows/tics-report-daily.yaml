@@ -5,6 +5,10 @@ on:
     - cron: '0 4 * * *'
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   apt_dependencies: >-
     ca-certificates curl dconf-cli gcc gettext git libnss-wrapper libsmbclient-dev
@@ -16,10 +20,11 @@ jobs:
     name: TIOBE TiCS Framework
     runs-on: ${{ vars.RUNNER }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-go@v6
         with:
           go-version-file: go.mod
+      - uses: canonical/desktop-engineering/gh-actions/common/dpkg-install-speedup@main
       - name: Install dependencies
         run: |
           sudo apt-get update

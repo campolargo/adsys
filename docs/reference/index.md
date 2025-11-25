@@ -20,13 +20,11 @@ ADSys Watch Daemon (adwatchd)<adwatchd>
 
 ## Command line interface
 
-Description of commands for achieving specific actions in the terminal.
+Detailed reference for CLI tooling.
 
 ```{toctree}
 :titlesonly:
-adsysctl<adsysctl-cli>
-adsysd<adsysd-cli>
-adwatchd<adwatchd-cli>
+cli-index
 ```
 
 ## Supported policies
@@ -52,3 +50,14 @@ Linux tools and terminology.
 glossary
 ```
 
+## Features
+
+Overview of ADSys' standard features and features enabled with a Pro
+subscription, in addition to release notes for ADSys.
+
+```{toctree}
+:titlesonly:
+
+features
+release-notes
+```

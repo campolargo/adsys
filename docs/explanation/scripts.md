@@ -1,5 +1,10 @@
 # Scripts execution
 
+```{include} ../pro_content_notice.txt
+    :start-after: <!-- Include start pro -->
+    :end-before: <!-- Include end pro -->
+```
+
 The scripts managers allows AD administrators to target scripts to be executed on behalf of the client, or by users.
 
 Those scripts, can be triggered on:
@@ -11,14 +16,11 @@ Scripts can be shell scripts, or any binary that can be executed on Linux.
 
 ![Scripts options in AD](../images/explanation/scripts/gpo-scripts.png)
 
-## Feature availability
-
-This feature is available only for subscribers of **Ubuntu Pro**.
-
 ## Rules precedence
 
 Any settings will be additive to the same settings in less specific GPO. It means that scripts in the less specific GPO will be executed first.
 
+(explanation::installing-scripts-on-sysvol)=
 ## Installing scripts on sysvol
 
 Scripts must be available in the assets sharing directory on your Active Directory `sysvol/` samba share.

@@ -1,4 +1,10 @@
+(exp::apparmor)=
 # Managing AppArmor profiles
+
+```{include} ../pro_content_notice.txt
+    :start-after: <!-- Include start pro -->
+    :end-before: <!-- Include end pro -->
+```
 
 The AppArmor manager allows to enforce custom [AppArmor](https://apparmor.net/) profiles on the client.
 
@@ -6,10 +12,6 @@ Custom AppArmor profiles can be enforced on a:
 
 * System-wide level, located in `Computer Configuration > Policies > Administrative Templates > Ubuntu > Client management > System-wide application confinement > AppArmor`
 * User level, located in `Computer Configuration > Policies > Administrative Templates > Ubuntu > Session management > User application confinement > AppArmor`
-
-## Feature availability
-
-This feature is available only for subscribers of **Ubuntu Pro**.
 
 ## Rules precedence
 
@@ -83,8 +85,9 @@ The module must then be configured manually for any desired executables. To enab
 session optional pam_apparmor.so order=user,default
 ```
 
-> **Warning**
-> Even though GPOs can be applied to AD groups, the AppArmor policy manager currently only supports confining AD users, so we've omitted `group` from the PAM order.
+```{warning}
+Even though GPOs can be applied to AD groups, the AppArmor policy manager currently only supports confining AD users, so we've omitted `group` from the PAM order.
+```
 
 ### User profile declaration syntax
 

@@ -1,5 +1,10 @@
 # Certificate auto-enrollment
 
+```{include} ../pro_content_notice.txt
+    :start-after: <!-- Include start pro -->
+    :end-before: <!-- Include end pro -->
+```
+
 The certificate policy manager allows clients to enroll for certificates from **Active Directory Certificate Services**. Certificates are then continuously monitored and refreshed by the [`certmonger`](https://www.freeipa.org/page/Certmonger) daemon. Currently, only machine certificates are supported.
 
 Unlike the other ADSys policy managers which are configured in the special Ubuntu section provided by the ADMX files (Administrative Templates), settings for certificate auto-enrollment are configured in the Microsoft GPO tree:
@@ -8,14 +13,12 @@ Unlike the other ADSys policy managers which are configured in the special Ubunt
 
 ![Certificate GPO tree view](../images/explanation/certificates/certificate-settings.png)
 
-## Feature availability
+## Required packages
 
-This feature is available only for subscribers of **Ubuntu Pro** and has been tested and known to work on all Ubuntu versions starting with 22.04 (Jammy).
+The following packages must be installed on the client in order for auto-enrollment to work:
 
-Additionally, the following packages must be installed on the client in order for auto-enrollment to work:
-
-* [`certmonger`](https://www.freeipa.org/page/Certmonger) - daemon that monitors and updates certificates
-* [`cepces`](https://github.com/openSUSE/cepces) - `certmonger` extension that can communicate with **Active Directory Certificate Services**
+* [`certmonger`](https://www.freeipa.org/page/Certmonger) — daemon that monitors and updates certificates
+* [`cepces`](https://github.com/openSUSE/cepces) — `certmonger` extension that can communicate with **Active Directory Certificate Services**
 
 On Ubuntu systems, run the following to install them:
 
