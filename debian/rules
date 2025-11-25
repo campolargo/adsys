@@ -29,8 +29,8 @@ export ADSYS_SKIP_INTEGRATION_TESTS=1
 # as long as it matches the go.mod go stenza which is the language requirement.
 export GOTOOLCHAIN := local
 
-# Run with Go 1.23
-export PATH := /usr/lib/go-1.23/bin/:$(PATH)
+# Run with Go 1.24
+export PATH := /usr/lib/go-1.24/bin/:$(PATH)
 
 %:
 	dh $@ --buildsystem=golang --with=golang,apport
