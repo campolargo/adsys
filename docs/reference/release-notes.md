@@ -31,6 +31,16 @@ point releases from most recent to least recent.
 
 #### Point releases for ADSys 0.16
 
+##### **ADSys 0.16.4**
+
+* Allow searching GPO list by `userPrincipalName`
+* Fix invalid header for newer polkit versions 
+* Add Getting Started tutorial to docs
+* Add release notes to docs
+* Add security overview to docs
+* Build sitemap for the docs
+* Track docs using Google Analytics
+
 ##### **ADSys 0.16.3**
 
 * Fix to vendored code for certificate auto-enrollment
