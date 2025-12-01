@@ -49,7 +49,6 @@ We highly recommend developing AppArmor profiles separately from ADSys, testing 
 
 * [How to create AppArmor Profile](https://ubuntu.com/tutorials/beginning-apparmor-profile-development)
 * [AppArmor Documentation](https://gitlab.com/apparmor/apparmor/-/wikis/Documentation)
-* [The Comprehensive Guide To AppArmor](https://medium.com/information-and-technology/so-what-is-apparmor-64d7ae211ed)
 
 ## System-wide profiles
 
