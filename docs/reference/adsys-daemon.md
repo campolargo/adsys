@@ -37,8 +37,10 @@ Here is an example list of timers after running `systemctl list-timers`:
 
 
 ```{terminal}
-   :input: systemctl list-timers
-   :dir: 
+:dir: 
+
+systemctl list-timers
+
 NEXT                         LEFT          LAST                         PASSED             UNIT                           ACTIVATES
 Tue 2021-05-18 10:05:49 CEST 11min left    Tue 2021-05-18 09:35:49 CEST 18min ago          adsys-gpo-refresh.timer        adsys-gpo-refresh.service
 Tue 2021-05-18 10:31:34 CEST 36min left    Tue 2021-05-18 09:31:09 CEST 23min ago          anacron.timer                  anacron.service
@@ -67,8 +69,10 @@ You can confirm this by running `systemctl list-timers` after a reboot or after
 running `systemctl daemon-reload`:
 
 ```{terminal}
-   :input: sudo systemctl list-timers
-   :dir: 
+:dir: 
+
+sudo systemctl list-timers
+
 NEXT                         LEFT          LAST                         PASSED             UNIT                           ACTIVATES
 Tue 2021-05-18 10:35:45 CEST 16min left    Tue 2021-05-18 10:05:50 CEST 1h43min ago          adsys-gpo-refresh.timer        adsys-gpo-refresh.service
 [...]
@@ -81,8 +85,10 @@ The empty `OnBootSec=` and `OnUnitActiveSec=` statements are used to reset the s
 Administrators can get more details about the timer status:
 
 ```{terminal}
-   :input: sudo systemctl status adsys-gpo-refresh.timer
-   :dir: 
+:dir: 
+
+sudo systemctl status adsys-gpo-refresh.timer
+
 ● adsys-gpo-refresh.timer - Refresh ADSys GPO for machine and users
      Loaded: loaded (/lib/systemd/system/adsys-gpo-refresh.timer; enabled; vendor preset: enabled)
      Active: active (waiting) since Tue 2021-05-18 08:35:48 CEST; 1h 23min ago

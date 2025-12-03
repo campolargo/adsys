@@ -10,8 +10,10 @@ As a general rule, favor shell completion and the help command for discovering v
 To check which policies are currently applied to the current AD user, run `adsysctl policy applied`:
 
 ```{terminal}
-   :input: adsysctl policy applied
-   :dir: 
+:dir: 
+
+adsysctl policy applied
+
 Policies from machine configuration:
 - MainOffice Policy 2 ({B8D10A86-0B78-4899-91AF-6F0124ECEB48})
 - MainOffice Policy ({C4F393CA-AD9A-4595-AEBC-3FA6EE484285})
@@ -32,8 +34,10 @@ The order of policies is top-down, with higher GPOs having priority over lower o
 A `username` can be passed to request other users, if you have the right permissions:
 
 ```{terminal}
-   :input: adsysctl policy applied tina
-   :dir: 
+:dir: 
+
+adsysctl policy applied tina
+
 Policies from machine configuration:
 - MainOffice Policy ({A2F393CA-AD9A-4595-AEBC-3FA6EE484285})
 - Default Domain Policy ({31B2F340-016D-11D2-945F-00C04FB984F9})
@@ -51,8 +55,10 @@ Use shell completion to get the list of active users that you can request which 
 The `--details` flag can be used to check which policies are set to a given value or disabled by which key:
 
 ```{terminal}
-   :input: adsysctl policy applied --details
-   :dir: 
+:dir: 
+
+adsysctl policy applied --details
+
 Policies from machine configuration:
 - MainOffice Policy 2 ({B8D10A86-0B78-4899-91AF-6F0124ECEB48})
     - gdm:
@@ -83,8 +89,10 @@ Policies from user configuration:
 The `--all` flag lists every key set by a given GPO, including the ones that are redefined by another GPO with a higher priority. This is can be helpful for debugging your GPO stack and discovering where a given value is defined:
 
 ```{terminal}
-   :input: adsysctl policy applied --all
-   :dir: 
+:dir: 
+
+adsysctl policy applied --all
+
 Policies from machine configuration:
 - MainOffice Policy 2 ({B8D10A86-0B78-4899-91AF-6F0124ECEB48})
     - gdm:
@@ -120,8 +128,10 @@ The command `adsysctl policy update` is used to refresh the policies. By default
 For example, refreshing the policy for all the objects:
 
 ```{terminal}
-   :input: adsysctl policy update --all -v
-   :dir: 
+:dir: 
+
+adsysctl policy update --all -v
+
 INFO No configuration file: Config File "adsys" Not Found in "[/home/warthogs.biz/b/bob /etc]".
 We will only use the defaults, env variables or flags. 
 INFO Apply policy for adclient04 (machine: true)  
@@ -133,8 +143,10 @@ You can provide the name of a user and the path to its Kerberos ticket to refres
 For example for user `bob@warthogs.biz`
 
 ```{terminal}
-   :input: adsysctl update bob@warthogs.biz /tmp/krb5cc_1899001102_wBlbck -vv
-   :dir: 
+:dir: 
+
+adsysctl update bob@warthogs.biz /tmp/krb5cc_1899001102_wBlbck -vv
+
 INFO No configuration file: Config File "adsys" Not Found in "[/home/warthogs.biz/b/bob /etc]".
 We will only use the defaults, env variables or flags. 
 DEBUG Connecting as [[26812:519495]]               
@@ -172,8 +184,10 @@ yelp.desktop
 The command `adsysctl service status` can be used to get the status:
 
 ```{terminal}
-   :input: adsysctl service status
-   :dir: 
+:dir: 
+
+adsysctl service status
+
 Machine, updated on Tue May 18 12:15
 Connected users:
   bob@warthogs.biz, updated on Tue May 18 12:15
@@ -205,8 +219,10 @@ You can display logs with debugging levels independent of daemon and clients deb
 For example, running `cat` while the command `version` and `applied` are executed:
 
 ```{terminal}
-   :input: adsysctl service cat -vv
-   :dir: 
+:dir: 
+
+adsysctl service cat -vv
+
 INFO No configuration file: Config File "adsys" Not Found in "[/root /etc]".
 We will only use the defaults, env variables or flags. 
 DEBUG Connecting as [[29220:823925]]               
@@ -236,8 +252,10 @@ DEBUG Request /service/DumpPolicies done
 You can get the current service and client versions with the `version` command to check you are running with latest version on both sides:
 
 ```{terminal}
-   :input: adsysctl version
-   :dir: 
+:dir: 
+
+adsysctl version
+
 adsysctl        0.5
 adsysd          0.5
 ```
@@ -249,8 +267,9 @@ An offline version of this documentation is available in the daemon. It will ren
 You can get a list of all chapters with their titles:
 
 ```{terminal}
-   :input: adsysctl doc
-   :dir: 
+:dir: 
+
+adsysctl doc
 
    Table of content                                                           
 
@@ -262,8 +281,9 @@ You can get a list of all chapters with their titles:
 And render a given chapter by requesting it:
 
 ```{terminal}
-   :input: adsysctl doc Welcome
-   :dir: 
+:dir: 
+
+adsysctl doc Welcome
                                                                                                                                       
    ADSys: Active Directory Group Policy integration                                                                                   
                                                                                                                                       
