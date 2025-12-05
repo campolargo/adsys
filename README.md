@@ -2,7 +2,7 @@
 
 Active Directory GPO support.
 
-[![Code quality](https://github.com/ubuntu/adsys/workflows/QA/badge.svg)](https://github.com/ubuntu/adsys/actions?query=workflow%3AQA)
+[![Code quality](https://github.com/ubuntu/adsys/actions/workflows/qa.yaml/badge.svg)](https://github.com/ubuntu/adsys/actions?query=workflow%3AQA)
 [![Code coverage](https://codecov.io/gh/ubuntu/adsys/branch/main/graph/badge.svg)](https://codecov.io/gh/ubuntu/adsys)
 [![Go Reference](https://pkg.go.dev/badge/github.com/ubuntu/adsys.svg)](https://pkg.go.dev/github.com/ubuntu/adsys)
 [![Go Report Card](https://goreportcard.com/badge/ubuntu/adsys)](https://goreportcard.com/report/ubuntu/adsys)
