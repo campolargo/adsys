@@ -258,10 +258,11 @@ sudo realm discover <Domain_Name>
 The command should output information about your domain, for example:
 
 ```{terminal}
-   :input: realm discover <Domain_Name>
-   :user: <ubuntu-user>
-   :host: <ubuntu-host>
-   :dir: 
+:user: <ubuntu-user>
+:host: <ubuntu-host>
+:dir: 
+
+realm discover <Domain_Name>
 
 example.local
   type: kerberos

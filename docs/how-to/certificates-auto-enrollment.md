@@ -76,8 +76,10 @@ The `getcert list` command is provided by the `certmonger` utility, which is bei
 The output of the command should look something like this:
 
 ```{terminal}
-   :input: getcert list
-   :dir: 
+:dir: 
+
+getcert list
+
 Number of certificates and requests being tracked: 2
 Request ID 'galacticcafe-CA.Machine':
     status: MONITORING
@@ -123,8 +125,10 @@ Output:
 
 
 ```{terminal}
-   :input: cat /etc/ppp/peers/azure-vpn
-   :dir: 
+:dir: 
+
+cat /etc/ppp/peers/azure-vpn
+
 remotename: azure-vpn
 linkname: azure-vpn
 ipparamname: azure-vpn
@@ -164,8 +168,10 @@ This should output a point-to-point connection:
 
 
 ```{terminal}
-   :input: ip a
-   :dir: 
+:dir: 
+
+ip a
+
 ...
 ...
 8: ppp0: <POINTTOPOINT,MULTICAST,NOARP,UP,LOWER_UP> mtu 1500 pfifo_fast state unknown group default qlen 3
