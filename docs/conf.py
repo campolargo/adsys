@@ -165,9 +165,10 @@ if os.getenv("OPENAPI", ""):
 # - https://launchpad.net/example
 # - https://git.launchpad.net/example
 #
-html_theme_options = {
-    "source_edit_link": "https://github.com/ubuntu/adsys",
-}
+# NOTE: disabled for ADSys, as edit doesn't work for docs built from a tag (stable)
+# html_theme_options = {
+#     "source_edit_link": "https://github.com/ubuntu/adsys",
+# }
 
 # Project slug; see https://meta.discourse.org/t/what-is-category-slug/87897
 #
