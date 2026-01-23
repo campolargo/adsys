@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Create and apply Group Policy Objects for Ubuntu clients including computer settings, user settings, and dconf configuration examples."
+---
+
 (howto::use-gpo)=
 # How to use GPO with Ubuntu
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Complete guides for setting up ADSys, joining Ubuntu to Active Directory, and using Group Policy Objects with Ubuntu clients."
+---
+
 # How-to guides
 
 These guides help you complete specific tasks across the ADSys operations

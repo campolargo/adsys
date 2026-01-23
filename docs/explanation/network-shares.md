@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Configure system-wide and user-level network share mounting using Active Directory policies with support for SMB, NFS, and FTP protocols."
+---
+
 (exp::network-shares)=
 # Network shares
 

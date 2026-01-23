@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Manage administrator privileges on Ubuntu clients using Active Directory to grant or revoke sudo and polkit access for users and groups."
+---
+
 (exp::privileges)=
 # Admin privileges management
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Glossary of technical terms for ADSys including Active Directory, SSSD, Kerberos, GPO, and Ubuntu-specific terminology."
+---
+
 # Glossary for ADSys
 
 Overview of technical terms used in the documentation.

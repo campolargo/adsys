@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Execute scripts remotely on Ubuntu clients using Active Directory policies at computer startup/shutdown and user logon/logoff events."
+---
+
 # Scripts execution
 
 ```{include} ../pro_content_notice.txt

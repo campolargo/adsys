@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Reference guide for adsysctl command line utility to manage ADSys daemon, check applied policies, and generate admin templates."
+---
+
 (ref::adsysctl)=
 # The adsysctl command
 

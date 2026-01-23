@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Join Ubuntu Desktop to Active Directory during installation using the graphical installer with step-by-step configuration instructions."
+---
+
 (howto::join-installer)=
 # How to join Ubuntu Desktop to an Active Directory domain during installation
 

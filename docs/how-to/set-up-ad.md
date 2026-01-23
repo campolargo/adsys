@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Generate and deploy Ubuntu administrative templates (ADMX/ADML) to your Active Directory server for Group Policy management."
+---
+
 # How to set up the Active Directory server for Ubuntu clients
 
 Active Directory requires policy files (`.admx` and `.adml`), which define the settings for configuring clients and the actions for managing users.

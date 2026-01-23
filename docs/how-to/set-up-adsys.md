@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install and configure ADSys on Ubuntu Desktop or Server to enable Group Policy management with Active Directory integration."
+---
+
 # How to set up ADSys
 
 ADSys is not currently installed by default on Ubuntu desktop.

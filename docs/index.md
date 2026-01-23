@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Official documentation for ADSys - the Active Directory Group Policy client for managing Ubuntu Desktop and Server with Microsoft Active Directory."
+---
+
 # ADSys Documentation
 
 ADSys is the Active Directory Group Policy client for Ubuntu.

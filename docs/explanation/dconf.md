@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Enforce dconf settings on Ubuntu clients through Active Directory including login screen, wallpaper, launcher, and clock configurations."
+---
+
 # Dconf manager
 
 The dconf manager allows to enforce default or custom [dconf settings](https://wiki.gnome.org/Projects/dconf/SystemAdministrators) on the client.

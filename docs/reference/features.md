@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Compare ADSys standard and Ubuntu Pro features including privileges, scripts, AppArmor, network shares, proxy, and certificates."
+---
+
 # Feature availability
 
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Understand ADSys architecture and its integration with SSSD for managing authentication and Group Policy Objects on Ubuntu clients."
+---
+
 (ref::adsys-arch)=
 # ADSys architecture
 

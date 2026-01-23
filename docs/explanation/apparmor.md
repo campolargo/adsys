@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Learn how to enforce custom AppArmor profiles on Ubuntu clients using Active Directory Group Policy Objects at system-wide and user levels."
+---
+
 (exp::apparmor)=
 # Managing AppArmor profiles
 

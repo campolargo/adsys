@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Understand ADSys architecture, security features, and manager components including dconf, privileges, scripts, AppArmor, and certificates."
+---
+
 # Explanation
 
 Discussions of key topics to aid your understanding of ADSys.

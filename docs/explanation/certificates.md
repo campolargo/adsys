@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Configure certificate auto-enrollment for Ubuntu clients using Active Directory Certificate Services with certmonger and cepces integration."
+---
+
 # Certificate auto-enrollment
 
 ```{include} ../pro_content_notice.txt

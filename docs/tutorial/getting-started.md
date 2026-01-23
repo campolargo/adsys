@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Learn how to set up Active Directory on Windows Server, configure Ubuntu clients, and manage them with ADSys Group Policy Objects."
+---
+
 (tutorial::getting-started)=
 # Getting started with ADSys
 

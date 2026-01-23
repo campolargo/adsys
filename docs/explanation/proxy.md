@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Configure system-wide proxy settings on Ubuntu clients using Active Directory policies including HTTP, HTTPS, FTP, and SOCKS proxies."
+---
+
 (exp::network-proxy)=
 # Network proxy
 

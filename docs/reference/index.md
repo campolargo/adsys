@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Complete reference documentation for ADSys including daemon, CLI tools, supported policies, glossary, features, and release notes."
+---
+
 # Reference
 
 Reference information is here provided for:
