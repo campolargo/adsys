@@ -18,51 +18,23 @@ explanation/index
 
 ## In this documentation
 
+* **Tutorial**: [Getting started with ADSys](/tutorial/getting-started)
+* **Installation and setup**: [Setting up Active Directory](/how-to/set-up-ad) • [Joining AD during Ubuntu Desktop install](/how-to/join-ad-installation) • [Joining AD manually](/how-to/join-ad-manually) • [Setting up ADSys on Ubuntu Desktop](/how-to/set-up-adsys) • [Setting up adwatchd](/how-to/set-up-adwatchd)
+* **Client configuration and management**: [Client configuration using Dconf](/explanation/dconf) • [Configuring network shares](/explanation/network-shares) • [Configuring a network proxy](/explanation/proxy) • [Configuring scripts execution](/explanation/scripts) • [Configuring privileges management](/explanation/privileges) • [Configuring AppArmor profiles](/explanation/apparmor)
+* **Group policies**: [Using GPOs with ADSys](/how-to/use-gpo) • [Group policies supported by ADSys](/reference/policies/index) • [Security policies managed by SSSD](/explanation/security-policy) • [ADSys architecture](/explanation/adsys-ref-arch) 
+* **Certificates**: [Setting up auto-enrollment for certificates](/how-to/certificates-auto-enrollment) • [Explanation of certificates in ADSys](/explanation/certificates)
+* **Command-line tools**: [adsysctl CLI](/reference/adsysctl-cli) • [adsysd CLI](/reference/adsysd-cli) • [adwatchd CLI](/reference/adwatchd-cli)
+* **ADSys security**: [Security overview](/explanation/security-overview)
+* **ADSys reference**: [Standard and Pro features](/reference/features) • [Release notes](/reference/release-notes) • [Glossary](/reference/glossary)
 
-````{grid} 1 1 2 2
+## How the documentation is organised
 
-```{grid-item-card}
-### [Tutorial](tutorial/index)
+This documentation uses the [Diátaxis structure](https://diataxis.fr/).
 
-**Learn** to use ADSys for managing Ubuntu Desktop with Active Directory:
-
-* [Getting started with ADSys](tutorial::getting-started)
-
-```
-
-```{grid-item-card}
-### [How-to guides](how-to/index)
-
-**Follow guides** for specific tasks, like:
-
-* [Joining to AD on Ubuntu Desktop install](/how-to/join-ad-manually)
-* [Setting up ADSys on Ubuntu Desktop](./how-to/set-up-adsys.md)
-```
-
-````
-
-````{grid} 1 1 2 2
-
-```{grid-item-card}
-### [Explanation](explanation/index)
-
-**Understand** topics including:
-
-* [The architecture of ADSys](/explanation/adsys-ref-arch)
-* [Client configuration using Dconf](./explanation/dconf)
-```
-
-```{grid-item-card}
-### [Reference](reference/index)
-
-**Find specific information**, such as:
-
-* [Standard and Pro features for ADSys](/reference/features)
-* [Policies supported by ADSys](/reference/policies/index)
-
-```
-
-````
+* [Tutorials](/tutorial/index) take you through practical, end-to-end learning experiences.
+* [How-to guides](/how-to/index) provide you with the steps necessary for completing specific tasks.
+* [References](/reference/index) give you concise and factual information to support your understanding.
+* [Explanations](/explanation/index) include topic overviews and additional context on the software.
 
 ## Project and community
 
