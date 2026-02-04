@@ -37,7 +37,7 @@ explanation/index
 
 This documentation uses the [Diátaxis structure](https://diataxis.fr/).
 
-* [Tutorials](/tutorial/index) take you through practical, end-to-end learning experiences.
+* [Tutorial](/tutorial/getting-started) takes you through a practical, end-to-end learning experiences.
 * [How-to guides](/how-to/index) provide you with the steps necessary for completing specific tasks.
 * [References](/reference/index) give you concise and factual information to support your understanding.
 * [Explanations](/explanation/index) include topic overviews and additional context on the software.

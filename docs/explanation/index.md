@@ -1,9 +1,3 @@
----
-myst:
-  html_meta:
-    description: "Understand ADSys architecture, security features, and manager components including dconf, privileges, scripts, AppArmor, and certificates."
----
-
 # Explanation
 
 Discussions of key topics to aid your understanding of ADSys.
@@ -35,7 +29,7 @@ aspects of the client systems:
 :titlesonly:
 GSettings <dconf>
 Privileges management <privileges>
-scripts
+Scripts execution <scripts>
 AppArmor profiles <apparmor>
 network-shares
 proxy
