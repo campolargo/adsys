@@ -16,7 +16,7 @@ System administrators can use ADSys to apply familiar skills and tools for manag
 
 ```{toctree}
 :hidden:
-tutorial/index
+Tutorial <tutorial/getting-started>
 how-to/index
 reference/index
 explanation/index
