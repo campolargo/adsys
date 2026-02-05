@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Reference for Active Directory Watch Daemon (adwatchd) including monitoring, logging, and GPT.ini version management automation."
+---
+
 # Active Directory Watch Daemon
 
 The Active Directory Watch Daemon, or adwatchd, is a Windows application.

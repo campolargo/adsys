@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Technical reference for the ADSys daemon (adsysd) including policy enforcement, caching, refresh rates, and configuration options."
+---
+
 # The adsys daemon
 
 ## Policy enforcement

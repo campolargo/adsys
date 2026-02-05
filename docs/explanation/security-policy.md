@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Security settings managed by SSSD including password policies, account lockout, user rights, and security options for Ubuntu clients."
+---
+
 # Case of the security policy
 
 Certain group policies are directly managed by **SSSD**. In such instances, **ADSys** is not involved at all. This is applicable to **Security Settings**.

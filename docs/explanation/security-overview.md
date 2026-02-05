@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Security overview of ADSys including air-gapped environment support, secure template transfer, and policy enforcement for Ubuntu clients."
+---
+
 # ADSys security overview
 
 ## Contribution of ADSys to security

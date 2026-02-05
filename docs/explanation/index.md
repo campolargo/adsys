@@ -29,7 +29,7 @@ aspects of the client systems:
 :titlesonly:
 GSettings <dconf>
 Privileges management <privileges>
-scripts
+Scripts execution <scripts>
 AppArmor profiles <apparmor>
 network-shares
 proxy

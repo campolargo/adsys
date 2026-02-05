@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install and configure the Active Directory Watch Daemon (adwatchd) on Windows Server to automate GPT.ini version management."
+---
+
 # How to set up the Active Directory Watch Daemon
 
 The Active Directory Watch Daemon or `adwatchd` is a Windows application for automating the otherwise manual process of incrementing the version stanza of a `GPT.ini` file.

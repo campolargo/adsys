@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Manually join Ubuntu clients to Active Directory using SSSD or Winbind backends."
+---
+
 (howto::join-manually)=
 # How to manually join Ubuntu clients to an Active Directory domain
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Learn how to configure certificate auto-enrollment for Ubuntu clients using Active Directory Certificate Services and GPO policies."
+---
+
 (howto::certificates)=
 # Certificates auto-enrollment
 

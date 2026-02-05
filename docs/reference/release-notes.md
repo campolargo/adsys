@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Release notes for ADSys versions including new features, bug fixes, upgrade instructions, and version history."
+---
+
 (ref::release-notes)=
 # Release notes for ADSys
 
